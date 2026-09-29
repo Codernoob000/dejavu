@@ -1,0 +1,891 @@
+{
+ "summary": {
+  "changes": 46,
+  "stateless_errors": 26,
+  "memory_errors": 9,
+  "reduction_pct": 65,
+  "stateless_first_half_rate": 0.652,
+  "stateless_second_half_rate": 0.478,
+  "memory_first_half_rate": 0.348,
+  "memory_second_half_rate": 0.043,
+  "overrides_learned": 7,
+  "incidents_learned": 2,
+  "note": "Simulated org: oracle-provided overrides/incidents. Stateless agent uses the same generic prior with no memory."
+ },
+ "rows": [
+  {
+   "i": 0,
+   "date": "2026-09-01",
+   "service": "checkout-web",
+   "pattern": "feature-flag",
+   "risky": true,
+   "stateless": {
+    "verdict": "SHIP",
+    "error": "miss"
+   },
+   "memory": {
+    "verdict": "HOLD",
+    "error": null,
+    "event": null,
+    "cited": 2
+   },
+   "cum_stateless": 1,
+   "cum_memory": 0
+  },
+  {
+   "i": 1,
+   "date": "2026-09-02",
+   "service": "search-indexer",
+   "pattern": "feature-flag",
+   "risky": false,
+   "stateless": {
+    "verdict": "SHIP",
+    "error": null
+   },
+   "memory": {
+    "verdict": "SHIP",
+    "error": null,
+    "event": null,
+    "cited": 0
+   },
+   "cum_stateless": 1,
+   "cum_memory": 0
+  },
+  {
+   "i": 2,
+   "date": "2026-09-03",
+   "service": "fraud-scorer",
+   "pattern": "cache-ttl",
+   "risky": false,
+   "stateless": {
+    "verdict": "SHIP",
+    "error": null
+   },
+   "memory": {
+    "verdict": "SHIP",
+    "error": null,
+    "event": null,
+    "cited": 1
+   },
+   "cum_stateless": 1,
+   "cum_memory": 0
+  },
+  {
+   "i": 3,
+   "date": "2026-09-04",
+   "service": "notification-worker",
+   "pattern": "schema-change",
+   "risky": false,
+   "stateless": {
+    "verdict": "HOLD",
+    "error": "false_alarm"
+   },
+   "memory": {
+    "verdict": "HOLD",
+    "error": "false_alarm",
+    "event": "override",
+    "cited": 1
+   },
+   "cum_stateless": 2,
+   "cum_memory": 1
+  },
+  {
+   "i": 4,
+   "date": "2026-09-05",
+   "service": "checkout-web",
+   "pattern": "retry-config",
+   "risky": false,
+   "stateless": {
+    "verdict": "REVIEW",
+    "error": "false_alarm"
+   },
+   "memory": {
+    "verdict": "REVIEW",
+    "error": "false_alarm",
+    "event": "override",
+    "cited": 0
+   },
+   "cum_stateless": 3,
+   "cum_memory": 2
+  },
+  {
+   "i": 5,
+   "date": "2026-09-06",
+   "service": "fraud-scorer",
+   "pattern": "dependency-bump",
+   "risky": true,
+   "stateless": {
+    "verdict": "SHIP",
+    "error": "miss"
+   },
+   "memory": {
+    "verdict": "SHIP",
+    "error": "miss",
+    "event": "incident",
+    "cited": 0
+   },
+   "cum_stateless": 4,
+   "cum_memory": 3
+  },
+  {
+   "i": 6,
+   "date": "2026-09-07",
+   "service": "auth-gateway",
+   "pattern": "dependency-bump",
+   "risky": false,
+   "stateless": {
+    "verdict": "SHIP",
+    "error": null
+   },
+   "memory": {
+    "verdict": "REVIEW",
+    "error": "false_alarm",
+    "event": "override",
+    "cited": 1
+   },
+   "cum_stateless": 4,
+   "cum_memory": 4
+  },
+  {
+   "i": 7,
+   "date": "2026-09-08",
+   "service": "ledger-api",
+   "pattern": "db-migration",
+   "risky": false,
+   "stateless": {
+    "verdict": "REVIEW",
+    "error": "false_alarm"
+   },
+   "memory": {
+    "verdict": "REVIEW",
+    "error": "false_alarm",
+    "event": "override",
+    "cited": 1
+   },
+   "cum_stateless": 5,
+   "cum_memory": 5
+  },
+  {
+   "i": 8,
+   "date": "2026-09-09",
+   "service": "search-indexer",
+   "pattern": "timeout-change",
+   "risky": false,
+   "stateless": {
+    "verdict": "REVIEW",
+    "error": "false_alarm"
+   },
+   "memory": {
+    "verdict": "REVIEW",
+    "error": "false_alarm",
+    "event": "override",
+    "cited": 0
+   },
+   "cum_stateless": 6,
+   "cum_memory": 6
+  },
+  {
+   "i": 9,
+   "date": "2026-09-10",
+   "service": "auth-gateway",
+   "pattern": "timeout-change",
+   "risky": true,
+   "stateless": {
+    "verdict": "REVIEW",
+    "error": null
+   },
+   "memory": {
+    "verdict": "HOLD",
+    "error": null,
+    "event": null,
+    "cited": 2
+   },
+   "cum_stateless": 6,
+   "cum_memory": 6
+  },
+  {
+   "i": 10,
+   "date": "2026-09-11",
+   "service": "payments-service",
+   "pattern": "retry-config",
+   "risky": true,
+   "stateless": {
+    "verdict": "HOLD",
+    "error": null
+   },
+   "memory": {
+    "verdict": "HOLD",
+    "error": null,
+    "event": null,
+    "cited": 4
+   },
+   "cum_stateless": 6,
+   "cum_memory": 6
+  },
+  {
+   "i": 11,
+   "date": "2026-09-12",
+   "service": "payments-service",
+   "pattern": "autoscaling-change",
+   "risky": false,
+   "stateless": {
+    "verdict": "REVIEW",
+    "error": "false_alarm"
+   },
+   "memory": {
+    "verdict": "REVIEW",
+    "error": "false_alarm",
+    "event": "override",
+    "cited": 0
+   },
+   "cum_stateless": 7,
+   "cum_memory": 7
+  },
+  {
+   "i": 12,
+   "date": "2026-09-13",
+   "service": "search-indexer",
+   "pattern": "db-migration",
+   "risky": false,
+   "stateless": {
+    "verdict": "REVIEW",
+    "error": "false_alarm"
+   },
+   "memory": {
+    "verdict": "REVIEW",
+    "error": "false_alarm",
+    "event": "override",
+    "cited": 1
+   },
+   "cum_stateless": 8,
+   "cum_memory": 8
+  },
+  {
+   "i": 13,
+   "date": "2026-09-14",
+   "service": "inventory-sync",
+   "pattern": "cache-ttl",
+   "risky": true,
+   "stateless": {
+    "verdict": "SHIP",
+    "error": "miss"
+   },
+   "memory": {
+    "verdict": "HOLD",
+    "error": null,
+    "event": null,
+    "cited": 3
+   },
+   "cum_stateless": 9,
+   "cum_memory": 8
+  },
+  {
+   "i": 14,
+   "date": "2026-09-15",
+   "service": "notification-worker",
+   "pattern": "autoscaling-change",
+   "risky": true,
+   "stateless": {
+    "verdict": "REVIEW",
+    "error": null
+   },
+   "memory": {
+    "verdict": "REVIEW",
+    "error": null,
+    "event": null,
+    "cited": 0
+   },
+   "cum_stateless": 9,
+   "cum_memory": 8
+  },
+  {
+   "i": 15,
+   "date": "2026-09-16",
+   "service": "checkout-web",
+   "pattern": "retry-config",
+   "risky": false,
+   "stateless": {
+    "verdict": "REVIEW",
+    "error": "false_alarm"
+   },
+   "memory": {
+    "verdict": "SHIP",
+    "error": null,
+    "event": null,
+    "cited": 1
+   },
+   "cum_stateless": 10,
+   "cum_memory": 8
+  },
+  {
+   "i": 16,
+   "date": "2026-09-17",
+   "service": "notification-worker",
+   "pattern": "autoscaling-change",
+   "risky": true,
+   "stateless": {
+    "verdict": "REVIEW",
+    "error": null
+   },
+   "memory": {
+    "verdict": "REVIEW",
+    "error": null,
+    "event": null,
+    "cited": 0
+   },
+   "cum_stateless": 10,
+   "cum_memory": 8
+  },
+  {
+   "i": 17,
+   "date": "2026-09-18",
+   "service": "inventory-sync",
+   "pattern": "cache-ttl",
+   "risky": true,
+   "stateless": {
+    "verdict": "SHIP",
+    "error": "miss"
+   },
+   "memory": {
+    "verdict": "HOLD",
+    "error": null,
+    "event": null,
+    "cited": 3
+   },
+   "cum_stateless": 11,
+   "cum_memory": 8
+  },
+  {
+   "i": 18,
+   "date": "2026-09-19",
+   "service": "payments-service",
+   "pattern": "autoscaling-change",
+   "risky": false,
+   "stateless": {
+    "verdict": "REVIEW",
+    "error": "false_alarm"
+   },
+   "memory": {
+    "verdict": "SHIP",
+    "error": null,
+    "event": null,
+    "cited": 1
+   },
+   "cum_stateless": 12,
+   "cum_memory": 8
+  },
+  {
+   "i": 19,
+   "date": "2026-09-20",
+   "service": "notification-worker",
+   "pattern": "schema-change",
+   "risky": false,
+   "stateless": {
+    "verdict": "REVIEW",
+    "error": "false_alarm"
+   },
+   "memory": {
+    "verdict": "SHIP",
+    "error": null,
+    "event": null,
+    "cited": 2
+   },
+   "cum_stateless": 13,
+   "cum_memory": 8
+  },
+  {
+   "i": 20,
+   "date": "2026-09-21",
+   "service": "fraud-scorer",
+   "pattern": "dependency-bump",
+   "risky": true,
+   "stateless": {
+    "verdict": "SHIP",
+    "error": "miss"
+   },
+   "memory": {
+    "verdict": "HOLD",
+    "error": null,
+    "event": null,
+    "cited": 1
+   },
+   "cum_stateless": 14,
+   "cum_memory": 8
+  },
+  {
+   "i": 21,
+   "date": "2026-09-22",
+   "service": "ledger-api",
+   "pattern": "db-migration",
+   "risky": false,
+   "stateless": {
+    "verdict": "REVIEW",
+    "error": "false_alarm"
+   },
+   "memory": {
+    "verdict": "SHIP",
+    "error": null,
+    "event": null,
+    "cited": 2
+   },
+   "cum_stateless": 15,
+   "cum_memory": 8
+  },
+  {
+   "i": 22,
+   "date": "2026-09-23",
+   "service": "payments-service",
+   "pattern": "retry-config",
+   "risky": true,
+   "stateless": {
+    "verdict": "REVIEW",
+    "error": null
+   },
+   "memory": {
+    "verdict": "HOLD",
+    "error": null,
+    "event": null,
+    "cited": 4
+   },
+   "cum_stateless": 15,
+   "cum_memory": 8
+  },
+  {
+   "i": 23,
+   "date": "2026-09-24",
+   "service": "auth-gateway",
+   "pattern": "dependency-bump",
+   "risky": false,
+   "stateless": {
+    "verdict": "SHIP",
+    "error": null
+   },
+   "memory": {
+    "verdict": "SHIP",
+    "error": null,
+    "event": null,
+    "cited": 2
+   },
+   "cum_stateless": 15,
+   "cum_memory": 8
+  },
+  {
+   "i": 24,
+   "date": "2026-09-25",
+   "service": "search-indexer",
+   "pattern": "timeout-change",
+   "risky": false,
+   "stateless": {
+    "verdict": "REVIEW",
+    "error": "false_alarm"
+   },
+   "memory": {
+    "verdict": "SHIP",
+    "error": null,
+    "event": null,
+    "cited": 1
+   },
+   "cum_stateless": 16,
+   "cum_memory": 8
+  },
+  {
+   "i": 25,
+   "date": "2026-09-26",
+   "service": "search-indexer",
+   "pattern": "feature-flag",
+   "risky": false,
+   "stateless": {
+    "verdict": "SHIP",
+    "error": null
+   },
+   "memory": {
+    "verdict": "SHIP",
+    "error": null,
+    "event": null,
+    "cited": 0
+   },
+   "cum_stateless": 16,
+   "cum_memory": 8
+  },
+  {
+   "i": 26,
+   "date": "2026-09-27",
+   "service": "checkout-web",
+   "pattern": "feature-flag",
+   "risky": true,
+   "stateless": {
+    "verdict": "SHIP",
+    "error": "miss"
+   },
+   "memory": {
+    "verdict": "HOLD",
+    "error": null,
+    "event": null,
+    "cited": 2
+   },
+   "cum_stateless": 17,
+   "cum_memory": 8
+  },
+  {
+   "i": 27,
+   "date": "2026-09-28",
+   "service": "auth-gateway",
+   "pattern": "timeout-change",
+   "risky": true,
+   "stateless": {
+    "verdict": "REVIEW",
+    "error": null
+   },
+   "memory": {
+    "verdict": "HOLD",
+    "error": null,
+    "event": null,
+    "cited": 2
+   },
+   "cum_stateless": 17,
+   "cum_memory": 8
+  },
+  {
+   "i": 28,
+   "date": "2026-09-29",
+   "service": "fraud-scorer",
+   "pattern": "cache-ttl",
+   "risky": false,
+   "stateless": {
+    "verdict": "SHIP",
+    "error": null
+   },
+   "memory": {
+    "verdict": "SHIP",
+    "error": null,
+    "event": null,
+    "cited": 1
+   },
+   "cum_stateless": 17,
+   "cum_memory": 8
+  },
+  {
+   "i": 29,
+   "date": "2026-09-30",
+   "service": "search-indexer",
+   "pattern": "db-migration",
+   "risky": false,
+   "stateless": {
+    "verdict": "REVIEW",
+    "error": "false_alarm"
+   },
+   "memory": {
+    "verdict": "SHIP",
+    "error": null,
+    "event": null,
+    "cited": 2
+   },
+   "cum_stateless": 18,
+   "cum_memory": 8
+  },
+  {
+   "i": 30,
+   "date": "2026-10-01",
+   "service": "notification-worker",
+   "pattern": "autoscaling-change",
+   "risky": true,
+   "stateless": {
+    "verdict": "REVIEW",
+    "error": null
+   },
+   "memory": {
+    "verdict": "REVIEW",
+    "error": null,
+    "event": null,
+    "cited": 0
+   },
+   "cum_stateless": 18,
+   "cum_memory": 8
+  },
+  {
+   "i": 31,
+   "date": "2026-10-02",
+   "service": "fraud-scorer",
+   "pattern": "dependency-bump",
+   "risky": true,
+   "stateless": {
+    "verdict": "SHIP",
+    "error": "miss"
+   },
+   "memory": {
+    "verdict": "HOLD",
+    "error": null,
+    "event": null,
+    "cited": 1
+   },
+   "cum_stateless": 19,
+   "cum_memory": 8
+  },
+  {
+   "i": 32,
+   "date": "2026-10-03",
+   "service": "search-indexer",
+   "pattern": "feature-flag",
+   "risky": false,
+   "stateless": {
+    "verdict": "SHIP",
+    "error": null
+   },
+   "memory": {
+    "verdict": "SHIP",
+    "error": null,
+    "event": null,
+    "cited": 0
+   },
+   "cum_stateless": 19,
+   "cum_memory": 8
+  },
+  {
+   "i": 33,
+   "date": "2026-10-04",
+   "service": "auth-gateway",
+   "pattern": "dependency-bump",
+   "risky": false,
+   "stateless": {
+    "verdict": "SHIP",
+    "error": null
+   },
+   "memory": {
+    "verdict": "SHIP",
+    "error": null,
+    "event": null,
+    "cited": 2
+   },
+   "cum_stateless": 19,
+   "cum_memory": 8
+  },
+  {
+   "i": 34,
+   "date": "2026-10-05",
+   "service": "auth-gateway",
+   "pattern": "timeout-change",
+   "risky": true,
+   "stateless": {
+    "verdict": "REVIEW",
+    "error": null
+   },
+   "memory": {
+    "verdict": "HOLD",
+    "error": null,
+    "event": null,
+    "cited": 2
+   },
+   "cum_stateless": 19,
+   "cum_memory": 8
+  },
+  {
+   "i": 35,
+   "date": "2026-10-06",
+   "service": "payments-service",
+   "pattern": "autoscaling-change",
+   "risky": true,
+   "stateless": {
+    "verdict": "REVIEW",
+    "error": null
+   },
+   "memory": {
+    "verdict": "SHIP",
+    "error": "miss",
+    "event": "incident",
+    "cited": 1
+   },
+   "cum_stateless": 19,
+   "cum_memory": 9
+  },
+  {
+   "i": 36,
+   "date": "2026-10-07",
+   "service": "notification-worker",
+   "pattern": "schema-change",
+   "risky": false,
+   "stateless": {
+    "verdict": "REVIEW",
+    "error": "false_alarm"
+   },
+   "memory": {
+    "verdict": "SHIP",
+    "error": null,
+    "event": null,
+    "cited": 2
+   },
+   "cum_stateless": 20,
+   "cum_memory": 9
+  },
+  {
+   "i": 37,
+   "date": "2026-10-08",
+   "service": "inventory-sync",
+   "pattern": "cache-ttl",
+   "risky": true,
+   "stateless": {
+    "verdict": "SHIP",
+    "error": "miss"
+   },
+   "memory": {
+    "verdict": "HOLD",
+    "error": null,
+    "event": null,
+    "cited": 3
+   },
+   "cum_stateless": 21,
+   "cum_memory": 9
+  },
+  {
+   "i": 38,
+   "date": "2026-10-09",
+   "service": "search-indexer",
+   "pattern": "timeout-change",
+   "risky": false,
+   "stateless": {
+    "verdict": "REVIEW",
+    "error": "false_alarm"
+   },
+   "memory": {
+    "verdict": "SHIP",
+    "error": null,
+    "event": null,
+    "cited": 1
+   },
+   "cum_stateless": 22,
+   "cum_memory": 9
+  },
+  {
+   "i": 39,
+   "date": "2026-10-10",
+   "service": "checkout-web",
+   "pattern": "retry-config",
+   "risky": false,
+   "stateless": {
+    "verdict": "REVIEW",
+    "error": "false_alarm"
+   },
+   "memory": {
+    "verdict": "SHIP",
+    "error": null,
+    "event": null,
+    "cited": 1
+   },
+   "cum_stateless": 23,
+   "cum_memory": 9
+  },
+  {
+   "i": 40,
+   "date": "2026-10-11",
+   "service": "checkout-web",
+   "pattern": "feature-flag",
+   "risky": true,
+   "stateless": {
+    "verdict": "SHIP",
+    "error": "miss"
+   },
+   "memory": {
+    "verdict": "HOLD",
+    "error": null,
+    "event": null,
+    "cited": 2
+   },
+   "cum_stateless": 24,
+   "cum_memory": 9
+  },
+  {
+   "i": 41,
+   "date": "2026-10-12",
+   "service": "payments-service",
+   "pattern": "retry-config",
+   "risky": true,
+   "stateless": {
+    "verdict": "REVIEW",
+    "error": null
+   },
+   "memory": {
+    "verdict": "HOLD",
+    "error": null,
+    "event": null,
+    "cited": 4
+   },
+   "cum_stateless": 24,
+   "cum_memory": 9
+  },
+  {
+   "i": 42,
+   "date": "2026-10-13",
+   "service": "search-indexer",
+   "pattern": "db-migration",
+   "risky": false,
+   "stateless": {
+    "verdict": "REVIEW",
+    "error": "false_alarm"
+   },
+   "memory": {
+    "verdict": "SHIP",
+    "error": null,
+    "event": null,
+    "cited": 2
+   },
+   "cum_stateless": 25,
+   "cum_memory": 9
+  },
+  {
+   "i": 43,
+   "date": "2026-10-14",
+   "service": "fraud-scorer",
+   "pattern": "cache-ttl",
+   "risky": false,
+   "stateless": {
+    "verdict": "SHIP",
+    "error": null
+   },
+   "memory": {
+    "verdict": "SHIP",
+    "error": null,
+    "event": null,
+    "cited": 1
+   },
+   "cum_stateless": 25,
+   "cum_memory": 9
+  },
+  {
+   "i": 44,
+   "date": "2026-10-15",
+   "service": "ledger-api",
+   "pattern": "db-migration",
+   "risky": false,
+   "stateless": {
+    "verdict": "REVIEW",
+    "error": "false_alarm"
+   },
+   "memory": {
+    "verdict": "SHIP",
+    "error": null,
+    "event": null,
+    "cited": 2
+   },
+   "cum_stateless": 26,
+   "cum_memory": 9
+  },
+  {
+   "i": 45,
+   "date": "2026-10-16",
+   "service": "payments-service",
+   "pattern": "autoscaling-change",
+   "risky": true,
+   "stateless": {
+    "verdict": "REVIEW",
+    "error": null
+   },
+   "memory": {
+    "verdict": "HOLD",
+    "error": null,
+    "event": null,
+    "cited": 2
+   },
+   "cum_stateless": 26,
+   "cum_memory": 9
+  }
+ ]
+}
